@@ -263,7 +263,6 @@ procedure TCadastroPetForm.FormKeyDown(Sender: TObject; var Key: Word;
 begin
   if Key = VK_ESCAPE then
   Begin
-    // BtnCancelarClick(Sender);
     BtnCancelar.Click;
   End;
 
@@ -516,7 +515,6 @@ end;
 
 procedure TCadastroPetForm.sBitBtn4Click(Sender: TObject);
 begin
-  // DM.VetQuery.Open;
   sMessageDlg('Para o Alan do futuro',
     'Coloca aqui a tela de Cadastro do cliente', mtInformation, [MBOK], 0);
 end;

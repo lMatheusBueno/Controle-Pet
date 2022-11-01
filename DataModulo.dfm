@@ -1,5 +1,5 @@
 object DM: TDM
-  OldCreateOrder = False
+  OldCreateOrder = True
   Height = 540
   Width = 662
   object IBclientes: TIBUpdateSQL
@@ -1557,7 +1557,7 @@ object DM: TDM
     SQL.Strings = (
       'SELECT PETCOD, NOMEPET, IDCLIENTE, NOMECLIENTE FROM PETS')
     Left = 556
-    Top = 38
+    Top = 94
   end
   object PetHistQuery: TIBQuery
     Database = DATABASE

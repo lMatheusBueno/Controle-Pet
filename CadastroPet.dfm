@@ -34,7 +34,6 @@
     Height = 52
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 692
     DesignSize = (
       691
       52)
@@ -59,7 +58,6 @@
       AnimatEvents = []
       Images = sAlphaImageList1
       SkinData.SkinSection = 'SPEEDBUTTON'
-      ExplicitLeft = 4
     end
     object BtnCancelar: TsBitBtn
       Left = 546
@@ -81,7 +79,6 @@
       ImageIndex = 5
       Images = sAlphaImageList2
       SkinData.SkinSection = 'SPEEDBUTTON'
-      ExplicitLeft = 547
     end
   end
   object PagePet: TsPageControl
@@ -103,10 +100,8 @@
     ParentFont = False
     TabOrder = 1
     OnChange = PagePetChange
-    ExplicitWidth = 686
     object sTabSheet1: TsTabSheet
       Caption = '1. Dados Principais'
-      ExplicitWidth = 678
       object txtcod: TLabel
         Left = 5
         Top = 4
@@ -684,7 +679,6 @@
     end
     object sTabSheet3: TsTabSheet
       Caption = '2. Controle de Vacinas'
-      ExplicitWidth = 678
       object Label14: TLabel
         Left = 5
         Top = 4
@@ -812,7 +806,6 @@
         Hint = 'Nome do Animal'
         HelpType = htKeyword
         TabStop = False
-        Color = clWhite
         DataField = 'COD_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -828,7 +821,6 @@
         Height = 24
         Cursor = crIBeam
         Hint = 'Nome do Animal'
-        Color = clWhite
         DataField = 'NOME_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -863,7 +855,6 @@
         Top = 73
         Width = 559
         Height = 122
-        Color = clWhite
         DataField = 'ANOTA_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -926,7 +917,6 @@
         Height = 24
         Cursor = crNo
         TabStop = False
-        Color = clWhite
         DataField = 'DIAS_VACINA'
         DataSource = DsVacinas
         ReadOnly = True
@@ -1505,7 +1495,6 @@
     end
     object Receituário: TsTabSheet
       Caption = '3. Receitu'#225'rio'
-      ExplicitWidth = 678
       object sLabel1: TsLabel
         Left = 520
         Top = 4
@@ -1529,7 +1518,6 @@
         Margins.Top = 20
         Margins.Bottom = 30
         Align = alCustom
-        Color = clWhite
         DataField = 'RECEITUARIO'
         DataSource = DSpetquery
         MaxLength = 500
