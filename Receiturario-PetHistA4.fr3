@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Tag="1" Version="6.9.12" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="44572,7131461343" ReportOptions.Description.Text="" ReportOptions.LastChange="44861,6582411343" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;&#13;&#10;end." OnReportPrint="frxReportOnReportPrint">
+  <Datasets>
+    <item DataSet="FrxHist" DataSetName="frxDBDataset1"/>
+    <item DataSet="frxDBConfig" DataSetName="frxDBDataset1"/>
+  </Datasets>
+  <Styles>
+    <item Name="Title" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0"/>
+    <item Name="Header" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="0"/>
+    <item Name="Group header" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="8"/>
+    <item Name="Data" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0"/>
+    <item Name="Group footer" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="4"/>
+    <item Name="Header line" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="8" Frame.Width="2"/>
+  </Styles>
+  <TfrxDataPage Name="Data" HGuides.Text="" VGuides.Text="" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" HGuides.Text="" VGuides.Text="" PaperWidth="200" PaperHeight="148" PaperSize="256" LeftMargin="5" RightMargin="5" TopMargin="5" BottomMargin="5" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="4" Height="563,98512512" Left="0" ParentFont="False" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="20,78832575" Top="100,23194306" Width="130,28928341" Height="14,69891389" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="NOME DO ANIMAL:"/>
+      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="148,21885397" Top="100,23194306" Width="218,80978538" Height="16,79238684" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[frxDBDataset1.&#34;NOMEPET&#34;]"/>
+      <TfrxMemoView Name="Memo16" AllowVectorExport="True" Left="385,84615384" Top="100,23194305" Width="112,32867133" Height="15,88735077" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="NOME CLIENTE:"/>
+      <TfrxMemoView Name="Memo17" AllowVectorExport="True" Left="497,97174569" Top="100,23194306" Width="251,98970077" Height="15,11812" DataField="NOMECLIENTE" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Style="Data" Text="[frxDBDataset1.&#34;NOMECLIENTE&#34;]"/>
+      <TfrxMemoView Name="Memo4" AllowVectorExport="True" Left="275,90569" Top="486,36915538" Width="166,29932" Height="15,11812" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haBlock" ParentFont="False" Text="Assinatura do Veterinário"/>
+      <TfrxMemoView Name="Memo5" AllowVectorExport="True" Left="219,08975" Top="468,38662538" Width="279,9312" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="4" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="                                                                    "/>
+      <TfrxShapeView Name="Shape2" AllowVectorExport="True" Left="11,68989347" Top="177,58222769" Width="694,73091307" Height="219,21274" Frame.Typ="0" Shape="skRoundRectangle"/>
+      <TfrxMemoView Name="Memo6" AllowVectorExport="True" Left="568,57095384" Top="404,47633385" Width="124,72449" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="www.setsistema.com.br"/>
+      <TfrxShapeView Name="Shape3" AllowVectorExport="True" Left="9,80012846" Top="87,71837692" Width="698,51044307" Height="39,96974462" Frame.Typ="0" Shape="skRoundRectangle"/>
+      <TfrxMemoView Name="Memo8" AllowVectorExport="True" Left="292,913575" Top="147,40167" Width="132,28355" Height="26,45671" Font.Charset="1" Font.Color="0" Font.Height="-19" Font.Name="Arial" Font.Style="5" Frame.Typ="0" HAlign="haBlock" ParentFont="False" VAlign="vaCenter" Text="RECEITÚARIO"/>
+      <TfrxMemoView Name="Memo9" AllowVectorExport="True" Left="25,38622116" Top="212,59252692" Width="659,64595" Height="150,31509" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="2" Font.Quality="fqProof" Frame.Typ="0" ParentFont="False" Text="[frxDBDataset1.&#34;RECEITUARIOHIST&#34;]"/>
+      <TfrxMemoView Name="frxDBDConfigCAB1" AllowVectorExport="True" Left="10,34032144" Top="3,51936827" Width="192,26423402" Height="20,71318575" DataField="CAB1" DataSetName="frxDBConfig" Font.Charset="1" Font.Color="0" Font.Height="-15" Font.Name="Arial" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="[frxDBConfig.&#34;CAB1&#34;]"/>
+      <TfrxMemoView Name="frxDBDConfigCAB2" AllowVectorExport="True" Left="12,03262914" Top="23,72917456" Width="192,26423402" Height="15,32857037" DataField="CAB2" DataSetName="frxDBConfig" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[frxDBConfig.&#34;CAB2&#34;]"/>
+      <TfrxMemoView Name="frxDBDConfigCAB3" AllowVectorExport="True" Left="11,72493683" Top="41,70875066" Width="192,26423402" Height="15,32857037" DataField="CAB3" DataSetName="frxDBConfig" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[frxDBConfig.&#34;CAB3&#34;]"/>
+      <TfrxMemoView Name="frxDBDConfigCAB4" AllowVectorExport="True" Left="11,72493683" Top="59,95263875" Width="192,26423402" Height="15,32857037" DataField="CAB4" DataSetName="frxDBConfig" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[frxDBConfig.&#34;CAB4&#34;]"/>
+      <TfrxPictureView Name="imgLogomarca" AllowVectorExport="True" Left="613,16619403" Top="8,05956669" Width="93,89648638" Height="66,22165057" Center="True" Frame.Typ="0" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+    </TfrxReportTitle>
+  </TfrxReportPage>
+</TfrxReport>
