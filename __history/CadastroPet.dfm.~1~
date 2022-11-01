@@ -7,7 +7,7 @@
   BorderStyle = bsSingle
   Caption = 'Cadastros de Animais'
   ClientHeight = 587
-  ClientWidth = 691
+  ClientWidth = 692
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -30,16 +30,15 @@
   object PanelBtnPet: TsPanel
     Left = 0
     Top = 535
-    Width = 691
+    Width = 692
     Height = 52
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 692
     DesignSize = (
-      691
+      692
       52)
     object BtnGravar: TsBitBtn
-      Left = 3
+      Left = 4
       Top = 6
       Width = 156
       Height = 40
@@ -59,10 +58,9 @@
       AnimatEvents = []
       Images = sAlphaImageList1
       SkinData.SkinSection = 'SPEEDBUTTON'
-      ExplicitLeft = 4
     end
     object BtnCancelar: TsBitBtn
-      Left = 546
+      Left = 547
       Top = 6
       Width = 137
       Height = 40
@@ -81,18 +79,17 @@
       ImageIndex = 5
       Images = sAlphaImageList2
       SkinData.SkinSection = 'SPEEDBUTTON'
-      ExplicitLeft = 547
     end
   end
   object PagePet: TsPageControl
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 685
+    Width = 686
     Height = 529
     Cursor = crHandPoint
     HelpType = htKeyword
-    ActivePage = sTabSheet1
+    ActivePage = sTabSheet3
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -103,10 +100,8 @@
     ParentFont = False
     TabOrder = 1
     OnChange = PagePetChange
-    ExplicitWidth = 686
     object sTabSheet1: TsTabSheet
       Caption = '1. Dados Principais'
-      ExplicitWidth = 678
       object txtcod: TLabel
         Left = 5
         Top = 4
@@ -624,7 +619,7 @@
           SkinData.ColorTone = clBlack
         end
         object Imagem2: TDBImage
-          Left = 16
+          Left = 18
           Top = 23
           Width = 155
           Height = 139
@@ -684,7 +679,6 @@
     end
     object sTabSheet3: TsTabSheet
       Caption = '2. Controle de Vacinas'
-      ExplicitWidth = 678
       object Label14: TLabel
         Left = 5
         Top = 4
@@ -1505,7 +1499,6 @@
     end
     object Receituário: TsTabSheet
       Caption = '3. Receitu'#225'rio'
-      ExplicitWidth = 678
       object sLabel1: TsLabel
         Left = 520
         Top = 4
