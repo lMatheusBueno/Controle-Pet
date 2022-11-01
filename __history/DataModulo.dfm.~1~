@@ -485,7 +485,8 @@ object DM: TDM
     end
   end
   object DATABASE: TIBDatabase
-    DatabaseName = 'C:\Banco de Dados Pet\DADOS5.FDB'
+    Connected = True
+    DatabaseName = 'C:\Controle Pet\DADOS5.FDB'
     Params.Strings = (
       'user_name=SYSDBA'
       'password=masterkey')
@@ -496,6 +497,7 @@ object DM: TDM
     Top = 37
   end
   object TRANSACION: TIBTransaction
+    Active = True
     DefaultDatabase = DATABASE
     Left = 127
     Top = 37
@@ -1856,6 +1858,7 @@ object DM: TDM
   object ConfigQuery: TIBQuery
     Database = DATABASE
     Transaction = TRANSACION
+    Active = True
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
