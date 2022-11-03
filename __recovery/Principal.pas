@@ -72,6 +72,7 @@ type
     R1: TMenuItem;
     frxVacinas: TfrxReport;
     FrxDBVacinas: TfrxDBDataset;
+    frxReport1: TfrxReport;
     procedure BtCadastrarClick(Sender: TObject);
     procedure GridPetsDblClickCell(Sender: TObject; ARow, ACol: Integer);
     procedure BtAlterarClick(Sender: TObject);

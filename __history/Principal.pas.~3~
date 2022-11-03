@@ -319,12 +319,10 @@ begin
   Imagem2.Picture := nil;
   LblData.Caption := FormatDateTime('dddd, dd " de " mmmmm " de " yyyy' +
     ' hh:mm:ss', Now);
-  diretorio := 'C:\Banco de Dados Pet\';
-  //ExtractFilePath(Application.ExeName);
-  showmessage(diretorio);
-  DM.DATABASE.Close;
-  DM.DATABASE.DatabaseName:= (diretorio + 'DADOS5.FDB');
-  DM.DATABASE.Open;
+  diretorio := ExtractFilePath(Application.ExeName);
+  // DM1.DATABASE.Close;
+  // DM1.DATABASE.DatabaseName:= ( diretorio + 'DADOS5.FDB');
+  // DM1.DATABASE.Open;
   inifile := tinifile.Create('localhost:' + diretorio + '\tabela.ini');
   s := inifile.ReadString('PETS', 'SETTINGS', GridPets.ColumnStatesToString);
 
