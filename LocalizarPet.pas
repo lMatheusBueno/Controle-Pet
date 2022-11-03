@@ -126,7 +126,7 @@ begin
         DM.VacQueryNOME_CLIENTE.Value := DM.AuxQuery5.FieldByName ('NOMECLIENTE').Value;
         DM.VacQueryTEL_CLIENTE.Value := DM.ClientesQueryFONE1.Value;
       end;
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
       Close;
       DM.AuxQuery5.SQL.Clear;
     end;

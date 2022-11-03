@@ -47,7 +47,6 @@ type
     procedure BtnGravarClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure DataHojeExit(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure BtnLocalizarCliVacClick(Sender: TObject);
     procedure BtnPesquisaPetVacClick(Sender: TObject);
     procedure BoxStatusVacExit(Sender: TObject);
@@ -141,7 +140,7 @@ begin
         else
         begin
           DM.VacQueryCOD_VAC.AsString := FormatFloat('0000', 1);
-          DM.TRANSACION.CommitRetaining;
+          DM.Transaction.CommitRetaining;
         end;
 
       end;
@@ -154,7 +153,7 @@ begin
     (Edit_DiasProx.Text <> '') and (Edit_Vacina.Text <> '') then
   begin
     DM.VacQuery.Post;
-    DM.TRANSACION.CommitRetaining;
+    DM.Transaction.CommitRetaining;
     Close;
   end;
 end;
@@ -201,14 +200,6 @@ begin
     BoxStatusVac.ItemIndex := 2;
     DM.VacQuerySTATUS_VAC.Value := BoxStatusVac.Text;
   End;
-end;
-
-procedure TCadastroVacinasForm.FormCreate(Sender: TObject);
-var
-  numero: integer;
-begin
-  // numero := strtoint(DM.VacQueryID_PET_VAC.Value);
-  // Edit_CodigoPet.Text := Format('%4.4d',[numero]);
 end;
 
 end.

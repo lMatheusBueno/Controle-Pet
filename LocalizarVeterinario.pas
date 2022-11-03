@@ -109,16 +109,12 @@ procedure TLocalizarVetForm.sBitBtn1Click(Sender: TObject);
 begin
   if DM.VetQuery.RecordCount > 0 then
   Begin
-    // DM.VetQuery.Edit;
-    // DM.VetQuery.Post;
+
     DM.VetQuery.Edit;
-    CadastroPetForm.Edit_Veterinario.text :=
-     DM.VetQuery.FieldByName('NOME').Value;
-    CadastroPetForm.Edit_CodigoVet.text :=
-    DM.VetQuery.FieldByName('IDCOLABORADOR').Value;
+    CadastroPetForm.Edit_Veterinario.text := DM.VetQuery.FieldByName('NOME').Value;
+    CadastroPetForm.Edit_CodigoVet.text :=  DM.VetQuery.FieldByName('IDCOLABORADOR').Value;
     DM.PetQueryCARGOVET.Value := DM.VetQueryCARGO.Value;
-    DM.TRANSACION.CommitRetaining;
-    //DM.AuxQuery4.SQL.Clear;
+    DM.Transaction.CommitRetaining;
     close;
   End;
 end;

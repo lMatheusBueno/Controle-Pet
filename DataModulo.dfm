@@ -355,7 +355,7 @@ object DM: TDM
   end
   object PetQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -490,19 +490,19 @@ object DM: TDM
       'user_name=SYSDBA'
       'password=masterkey')
     LoginPrompt = False
-    DefaultTransaction = TRANSACION
+    DefaultTransaction = Transaction
     ServerType = 'IBServer'
     Left = 41
     Top = 37
   end
-  object TRANSACION: TIBTransaction
+  object Transaction: TIBTransaction
     DefaultDatabase = DATABASE
     Left = 127
     Top = 37
   end
   object ClientesQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1144,7 +1144,7 @@ object DM: TDM
   end
   object AuxQuery2: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1155,7 +1155,7 @@ object DM: TDM
   end
   object AuxQuery3: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1164,7 +1164,7 @@ object DM: TDM
   end
   object AuxQuery4: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1175,7 +1175,7 @@ object DM: TDM
   end
   object VetQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     ForcedRefresh = True
     BufferChunks = 1000
     CachedUpdates = False
@@ -1550,7 +1550,7 @@ object DM: TDM
   end
   object AuxQuery5: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1561,7 +1561,7 @@ object DM: TDM
   end
   object PetHistQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     ForcedRefresh = True
     BufferChunks = 1000
     CachedUpdates = False
@@ -1660,7 +1660,7 @@ object DM: TDM
   end
   object AuxQuery1: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1673,7 +1673,7 @@ object DM: TDM
   end
   object VacQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1846,7 +1846,7 @@ object DM: TDM
   end
   object ExtraQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1855,7 +1855,7 @@ object DM: TDM
   end
   object ConfigQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True
@@ -1918,7 +1918,7 @@ object DM: TDM
   end
   object AjudaQuery: TIBQuery
     Database = DATABASE
-    Transaction = TRANSACION
+    Transaction = Transaction
     BufferChunks = 1000
     CachedUpdates = False
     ParamCheck = True

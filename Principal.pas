@@ -155,30 +155,23 @@ begin
 
     fldname := GridPets.Columns[ACol].FieldName;
 
-    // Colocar todos os filtros do combobox de pesquisa aqui em baixo
-
     if cbFiltro.Text = 'Nome Pet' then
-      filtro := ' and NOMEPET like' +
-        QuotedStr('%' + Edit_LocalizarCli.Text + '%');
-
-    DM.PetQuery.SQL.Text := ('select * from PETS where NOMEPET = NOMEPET' +
-      filtro_situacao + filtro + ' order by ' + fldname);
-    // DM.PetQuery.SQL.Text := ('select * from PETS  order by ' + fldname);
+    begin
+    filtro := ' and NOMEPET like' +  QuotedStr('%' + Edit_LocalizarCli.Text + '%');
+    DM.PetQuery.SQL.Text := ('select * from PETS where NOMEPET = NOMEPET' + filtro_situacao + filtro + ' order by ' + fldname);
+    end;
 
     if GridPets.SortSettings.Direction = sdAscending then
-      DM.PetQuery.SQL.Add('desc');
-
-    // DM.PetQuery.ParamByName('pempresa').AsString := '1'; // COLOCAR EMPRESA AQUI;
-
+    begin
+    DM.PetQuery.SQL.Add('desc');
     DM.PetQuery.Active := true;
     GridPets.SortSettings.Column := ACol;
+    end;
 
   end;
 end;
 
 procedure TPrincipalForm.GridPetsClick(Sender: TObject);
-var
-  codigo: string;
 begin
   if ExibirVacinas_Check.Checked = true then
   begin
@@ -368,7 +361,7 @@ begin
   DM.PetQuery.Open;
   DM.VetQuery.Open;
   DM.PetHistQuery.Open;
-  DM.TRANSACION.CommitRetaining;
+  DM.Transaction.CommitRetaining;
   DM.VetQuery.Append;
   DM.PetQuery.Append;
   DM.PetHistQuery.Insert;

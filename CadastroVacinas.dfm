@@ -14,7 +14,6 @@ object CadastroVacinasForm: TCadastroVacinasForm
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object sBevel6: TsBevel
@@ -348,8 +347,6 @@ object CadastroVacinasForm: TCadastroVacinasForm
     Height = 56
     Align = alBottom
     TabOrder = 8
-    ExplicitLeft = -1
-    ExplicitTop = 383
     DesignSize = (
       583
       56)

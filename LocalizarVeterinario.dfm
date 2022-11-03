@@ -432,8 +432,6 @@ object LocalizarVetForm: TLocalizarVetForm
       SkinData.SkinSection = 'BARPANEL'
       Align = alBottom
       TabOrder = 1
-      ExplicitTop = 312
-      ExplicitWidth = 671
       object Label1: TLabel
         Left = 13
         Top = 10

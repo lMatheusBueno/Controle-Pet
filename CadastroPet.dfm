@@ -102,6 +102,10 @@
     OnChange = PagePetChange
     object sTabSheet1: TsTabSheet
       Caption = '1. Dados Principais'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object txtcod: TLabel
         Left = 5
         Top = 4
@@ -679,6 +683,10 @@
     end
     object sTabSheet3: TsTabSheet
       Caption = '2. Controle de Vacinas'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label14: TLabel
         Left = 5
         Top = 4
@@ -1530,6 +1538,7 @@
   object sSkinManager1: TsSkinManager
     ButtonsOptions.OldGlyphsMode = True
     ButtonsOptions.ModalButtonsColoring = []
+    IsDefault = False
     SkinnedPopups = False
     InternalSkins = <
       item

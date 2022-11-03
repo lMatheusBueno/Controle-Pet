@@ -69,12 +69,10 @@ begin
     end;
   end;
 
-  DM.VacQuery.SQL.Add('select *from PETSVAC ' + filtro_atraso + filtro_pendente
-    + filtro_concluido);
+  DM.VacQuery.SQL.Add('select *from PETSVAC ' + filtro_atraso + filtro_pendente + filtro_concluido);
   DM.VacQuery.Open;
   PrincipalForm.frxVacinas.PrepareReport();
   PrincipalForm.frxVacinas.ShowReport();
-
 
 end;
 

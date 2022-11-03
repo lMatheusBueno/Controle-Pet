@@ -11,7 +11,7 @@ type
     IBclientes: TIBUpdateSQL;
     PetQuery: TIBQuery;
     DATABASE: TIBDatabase;
-    TRANSACION: TIBTransaction;
+    Transaction: TIBTransaction;
     ClientesQuery: TIBQuery;
     IBpet: TIBUpdateSQL;
     ClientesQueryIDCLIENTE: TIntegerField;

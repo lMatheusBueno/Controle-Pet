@@ -308,7 +308,7 @@ begin
       else
       begin
         DM.VacQueryCOD_VAC.AsString := FormatFloat('0000', 1);
-        DM.TRANSACION.CommitRetaining;
+        DM.Transaction.CommitRetaining;
       end;
 
     end;
@@ -386,7 +386,7 @@ begin
     else
     begin
       DM.PetQueryPETCOD.AsString := FormatFloat('0000', 1);
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
     end;
 
     if DM.PetQuery.Modified = true or (DM.PetQuery.State = dsInsert) then
@@ -418,7 +418,7 @@ begin
     if DM.PetQuery.State <> dsEdit then
     begin
       DM.PetQuery.Post;
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
       DM.PetQuery.Close;
       DM.PetQuery.Open;
       CadastroPetForm.Visible := false;
@@ -762,7 +762,7 @@ begin
       DM.PetQueryCOD_CLIENTE_PET.Value := DM.extraquery.FieldByName
         ('COD').Value;
       DM.PetQueryNOMECLIENTE.Value := DM.extraquery.FieldByName('RAZAO').Value;
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
       DM.ExtraQuery.SQL.Clear;
     end;
   end
@@ -770,7 +770,7 @@ begin
   begin
     DM.PetQuery.Edit;
     DM.PetQueryNOMECLIENTE.Value := '';
-    DM.TRANSACION.CommitRetaining;
+    DM.Transaction.CommitRetaining;
     DM.ExtraQuery.SQL.Clear;
   end;
 end;
@@ -810,7 +810,7 @@ begin
       DM.VetQuery.Edit;
       DM.PetQueryNOMEVETERINARIO.Value := DM.AuxQuery4.FieldByName('NOME').Value;
       DM.PetQueryIDVETERINARIO.Value := DM.AuxQuery4.FieldByName('IDCOLABORADOR').Value;
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
       Perform(Wm_NextDlgCtl, 0, 0);
       DM.AuxQuery4.SQL.Clear;
     end;
@@ -819,7 +819,7 @@ begin
   begin
     DM.PetQueryNOMEVETERINARIO.Value := '';
     DM.VetQuery.Edit;
-    DM.TRANSACION.CommitRetaining;
+    DM.Transaction.CommitRetaining;
     DM.AuxQuery4.SQL.Clear;
   end;
 end;
@@ -834,7 +834,7 @@ procedure TCadastroPetForm.Edit_CodigoVetChange(Sender: TObject);
 
 begin
   DM.VetQuery.Open;
-  DM.TRANSACION.CommitRetaining;
+  DM.Transaction.CommitRetaining;
 end;
 
 procedure TCadastroPetForm.Edit_CodigoVetKeyDown(Sender: TObject; var Key: Word;

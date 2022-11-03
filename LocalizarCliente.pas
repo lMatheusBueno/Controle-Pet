@@ -79,7 +79,7 @@ begin
         DM.VacQueryID_CLIENTE.Value := DM.extraquery.FieldByName('COD').Value;
         DM.VacQueryNOME_CLIENTE.Value := DM.extraquery.FieldByName('RAZAO').Value;
       end;
-      DM.TRANSACION.CommitRetaining;
+      DM.Transaction.CommitRetaining;
     end;
     Close;
 
