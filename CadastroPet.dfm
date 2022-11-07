@@ -38,7 +38,7 @@
       691
       52)
     object BtnGravar: TsBitBtn
-      Left = 3
+      Left = 6
       Top = 6
       Width = 156
       Height = 40
@@ -60,7 +60,7 @@
       SkinData.SkinSection = 'SPEEDBUTTON'
     end
     object BtnCancelar: TsBitBtn
-      Left = 546
+      Left = 548
       Top = 6
       Width = 137
       Height = 40
@@ -102,10 +102,6 @@
     OnChange = PagePetChange
     object sTabSheet1: TsTabSheet
       Caption = '1. Dados Principais'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object txtcod: TLabel
         Left = 5
         Top = 4
@@ -683,10 +679,6 @@
     end
     object sTabSheet3: TsTabSheet
       Caption = '2. Controle de Vacinas'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label14: TLabel
         Left = 5
         Top = 4

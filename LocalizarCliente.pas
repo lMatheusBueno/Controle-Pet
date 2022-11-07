@@ -23,7 +23,6 @@ type
     procedure Edit_ClienteLocalizarChange(Sender: TObject);
     procedure Btn_OkCliClick(Sender: TObject);
     procedure GridClientesDblClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,16 +41,9 @@ uses DataModulo, CadastroPet, Principal;
 procedure TFomrLocalizarCliente.Edit_ClienteLocalizarChange(Sender: TObject);
 begin
   DM.ClientesQuery.SQL.Clear;
-
   DM.ClientesQuery.SQL.Add('select *from CLIENTES where UPPER (RAZAO) like ' +
     QuotedStr('%' + UPPERCASE(QuotedStr(Edit_ClienteLocalizar.Text)) + '%'''));
-
   DM.ClientesQuery.open;
-end;
-
-procedure TFomrLocalizarCliente.FormCreate(Sender: TObject);
-begin
-Btn_OkCliClick(sender);
 end;
 
 procedure TFomrLocalizarCliente.GridClientesDblClick(Sender: TObject);

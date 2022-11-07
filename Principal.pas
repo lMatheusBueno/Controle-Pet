@@ -143,32 +143,26 @@ procedure TPrincipalForm.GridPetsCanSort(Sender: TObject; ACol: Integer;
 var
   fldname, filtro, filtro_situacao: string;
 begin
+
+  if Filtro_Check.Checked = true then
   begin
-    if Filtro_Check.Checked = true then
-    begin
-      filtro_situacao := ' and SITUACAOPET =' + QuotedStr('Inativo');
-    end
-    else
-    begin
-      filtro_situacao := ' and SITUACAOPET =' + QuotedStr('Ativo');
-    end;
-
-    fldname := GridPets.Columns[ACol].FieldName;
-
-    if cbFiltro.Text = 'Nome Pet' then
-    begin
-    filtro := ' and NOMEPET like' +  QuotedStr('%' + Edit_LocalizarCli.Text + '%');
-    DM.PetQuery.SQL.Text := ('select * from PETS where NOMEPET = NOMEPET' + filtro_situacao + filtro + ' order by ' + fldname);
-    end;
-
-    if GridPets.SortSettings.Direction = sdAscending then
-    begin
-    DM.PetQuery.SQL.Add('desc');
-    DM.PetQuery.Active := true;
-    GridPets.SortSettings.Column := ACol;
-    end;
-
+    filtro_situacao := ' and SITUACAOPET =' + QuotedStr('Inativo');
+  end
+  else
+  begin
+    filtro_situacao := ' and SITUACAOPET =' + QuotedStr('Ativo');
   end;
+
+  fldname := GridPets.Columns[ACol].FieldName;
+
+  if cbFiltro.Text = 'Nome Pet' then
+  filtro := ' and NOMEPET like' +  QuotedStr('%' + Edit_LocalizarCli.Text + '%');
+  DM.PetQuery.SQL.Text := ('select * from PETS where NOMEPET = NOMEPET' + filtro_situacao + filtro + ' order by ' + fldname);
+
+  if GridPets.SortSettings.Direction = sdAscending then
+  DM.PetQuery.SQL.Add('desc');
+  DM.PetQuery.Active := true;
+  GridPets.SortSettings.Column := ACol;
 end;
 
 procedure TPrincipalForm.GridPetsClick(Sender: TObject);
@@ -263,7 +257,8 @@ begin
   end
   else
   begin
-    sMessageDlg('Atenção', 'Receituario está em branco', mtInformation,[mbOK], 0);
+    sMessageDlg('Atenção', 'Receituario está em branco', mtInformation,
+      [mbOK], 0);
   end;
 end;
 
@@ -276,8 +271,9 @@ begin
     DM.AuxQuery1.Close;
     DM.AuxQuery1.Open;
     DM.AuxQuery1.SQL.Clear;
-    DM.AuxQuery1.SQL.Add('SELECT NOME_VAC, PROX_DATA_VAC,  DIAS_VACINA, TEL_CLIENTE, STATUS_VAC, DATA_VAC FROM PETSVAC  where (COD_PET_VAC) = ' +
-     codigo   + ' and status_vac <>' + QuotedStr('Concluido'));
+    DM.AuxQuery1.SQL.Add
+      ('SELECT NOME_VAC, PROX_DATA_VAC,  DIAS_VACINA, TEL_CLIENTE, STATUS_VAC, DATA_VAC FROM PETSVAC  where (COD_PET_VAC) = '
+      + codigo + ' and status_vac <>' + QuotedStr('Concluido'));
     DM.AuxQuery1.Open;
   end;
 end;
@@ -320,12 +316,11 @@ begin
   LblData.Caption := FormatDateTime('dddd, dd " de " mmmmm " de " yyyy' +
     ' hh:mm:ss', Now);
   diretorio := 'C:\Banco de Dados Pet\';
-  //ExtractFilePath(Application.ExeName);
-  showmessage(diretorio);
+  // ExtractFilePath(Application.ExeName);
   DM.DATABASE.Close;
-  DM.DATABASE.DatabaseName:= (diretorio + 'DADOS5.FDB');
+  DM.DATABASE.DatabaseName := (diretorio + 'DADOS5.FDB');
   DM.DATABASE.Open;
-  inifile := tinifile.Create('localhost:' + diretorio + '\tabela.ini');
+  inifile := tinifile.Create(diretorio + '\tabela.ini');
   s := inifile.ReadString('PETS', 'SETTINGS', GridPets.ColumnStatesToString);
 
   advs1 := TAdvStringGrid.Create(self);
@@ -475,14 +470,14 @@ end;
 
 procedure TPrincipalForm.Btn_ReceituarioClick(Sender: TObject);
 begin
-    DM.PetQuery.Open;
-    NotificacaoForm := TNotificacaoForm.Create(self);
-    NotificacaoForm.Btn_Enter.Visible := false;
-    NotificacaoForm.Btn_Sim.Visible := true;
-    NotificacaoForm.Btn_Nao.Visible := true;
-    NotificacaoForm.sLabel1.Caption :=
-      'Deseja Realizar o Cadastro de um novo Receituário?';
-    NotificacaoForm.Show;
+  DM.PetQuery.Open;
+  NotificacaoForm := TNotificacaoForm.Create(self);
+  NotificacaoForm.Btn_Enter.Visible := false;
+  NotificacaoForm.Btn_Sim.Visible := true;
+  NotificacaoForm.Btn_Nao.Visible := true;
+  NotificacaoForm.sLabel1.Caption :=
+    'Deseja Realizar o Cadastro de um novo Receituário?';
+  NotificacaoForm.Show;
 end;
 
 procedure TPrincipalForm.sButton1Click(Sender: TObject);
@@ -571,7 +566,8 @@ end;
 
 procedure TPrincipalForm.Timer1Timer(Sender: TObject);
 begin
-  LblData.Caption := FormatDateTime('dddd, dd " de " mmmmm " de " yyyy' + ' hh:mm:ss', Now);
+  LblData.Caption := FormatDateTime('dddd, dd " de " mmmmm " de " yyyy' +
+    ' hh:mm:ss', Now);
 end;
 
 procedure TPrincipalForm.txtPesquisarClick(Sender: TObject);

@@ -1147,7 +1147,6 @@ object PrincipalForm: TPrincipalForm
       Height = 363
       Cursor = crIBeam
       Align = alClient
-      Color = clWhite
       DataField = 'RECEITUARIO'
       DataSource = DSpetquery
       MaxLength = 500

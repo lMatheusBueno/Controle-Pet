@@ -1556,8 +1556,8 @@ object DM: TDM
     ParamCheck = True
     SQL.Strings = (
       'SELECT PETCOD, NOMEPET, IDCLIENTE, NOMECLIENTE FROM PETS')
-    Left = 556
-    Top = 94
+    Left = 548
+    Top = 38
   end
   object PetHistQuery: TIBQuery
     Database = DATABASE

@@ -435,7 +435,6 @@ begin
       DM.PetQuery.Post;
       DM.PetQuery.Close;
       DM.PetQuery.Open;
-      DM.PetQuery.ApplyUpdates;
       Close;
     end;
   end;

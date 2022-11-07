@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, AdvUtil, Vcl.StdCtrls, sLabel,
   Vcl.ExtCtrls, sPanel, Vcl.Buttons, sBitBtn, sEdit, sComboBox, sGroupBox,
-  Vcl.Grids, AdvObj, BaseGrid, AdvGrid, DBAdvGrid, Data.DB, sButton, sdialogs,
+  Vcl.Grids, AdvObj, BaseGrid, AdvGrid, DBAdvGrid, Data.DB, sButton, sdialogs ,
   sDBNavigator, sCheckBox, sRadioButton;
 
 type
@@ -83,7 +83,7 @@ begin
 end;
 
 procedure TVacinasForm.Btn_ImpVacinasClick(Sender: TObject);
-begin
+begiN
      if DM.VacQuery.RecordCount <> 0 then
   begin
     PrincipalForm.frxVacinas.PrepareReport();
@@ -105,9 +105,6 @@ var
 
 begin
 
-  //DataProx :=StrToDate((StringReplace(GridVacinas.Columns.Items[4].Field.Text, '/', '.',[rfReplaceAll, rfIgnoreCase]))); {**Altera de barra[/] para ponto[.]**}
-  //DataProx := StrToDate(((GridVacinas.Columns.Items[8].Field.Text))); {Parametro por numero do item da coluna}
-
   DataProx := StrToDate((( GridVacinas.ColumnByName['PROX_DATA_VAC'].Field.Text))); {Parametro por nome que esta no header da grid}
   Status := GridVacinas.ColumnByName['STATUS_VAC'].Field.Text;
   codigo := Trunc(DataProx);
@@ -128,18 +125,6 @@ begin
       DM.VacQuery.Post;
     end;
   end;
-
-  // if Data >= 0 then
-  // Begin
-  // BoxStatusVac.ItemIndex := 0;
-  // DM.VacQuerySTATUS_VAC.Value := BoxStatusVac.text;
-  // End
-  // else if Data < 0 then
-  // Begin
-  // BoxStatusVac.ItemIndex := 2;
-  // DM.VacQuerySTATUS_VAC.Value := BoxStatusVac.text;
-  // BoxStatusVac.Font.Color := clRed;
-  // End;
   { Pendente |Concluido| em Atraso }
 
 end;
@@ -182,7 +167,8 @@ end;
 
 procedure TVacinasForm.FormCreate(Sender: TObject);
 Var
-  resultado, resultado2: string;
+  Data : TDate;
+  resultado, resultado2 : string;
   I, contador, contador2: Integer;
 begin
   DM.VacQuery.Close;
@@ -213,27 +199,29 @@ begin
   end;
   Lb_Contador.Caption := inttostr(DM.VacQuery.RecordCount);
   resultado := FloatToStr(CadastroPetForm.DataVac(DateToStr(now)));
-  resultado2 := FloatToStr(CadastroPetForm.DataVac
-    (DateToStr(DM.VacQueryPROX_DATA_VAC.Value)));
+  resultado2 := FloatToStr(CadastroPetForm.DataVac(DateToStr(DM.VacQueryPROX_DATA_VAC.Value)));
 
   contador := 0;
   contador2 := 0;
   {CALCULAR DIAS PARA A VACINA}
+
   for I := 1 to DM.VacQuery.RecordCount do
-  begin
-    CarregarDiasVacina;
-    if (StrToInt(DM.VacQueryDIAS_VACINA.Value) >= 0) and
-      (DM.VacQuerySTATUS_VAC.Text <> 'Concluido') then
-    begin
-      contador := contador + 1;
-    end;
-    if (StrToInt(DM.VacQueryDIAS_VACINA.Value) < 0) and
-      (DM.VacQuerySTATUS_VAC.Text <> 'Concluido') then
-    begin
-      contador2 := contador2 + 1;
-    end;
-    DM.VacQuery.Next;
-  end;
+   begin
+      CarregarDiasVacina;
+     if (StrToInt(DM.VacQueryDIAS_VACINA.Value) >= 0) and
+        (DM.VacQuerySTATUS_VAC.Text <> 'Concluido') then
+     begin
+        contador := contador + 1;
+     end;
+     if (StrToInt(DM.VacQueryDIAS_VACINA.Value) < 0) and
+        (DM.VacQuerySTATUS_VAC.Text <> 'Concluido') then
+     begin
+        contador2 := contador2 + 1;
+     end;
+     DM.VacQuery.Next;
+   end;
+
+  showmessage(datetostr(Data));
   NotificacaoForm := TNotificacaoForm.Create(Self);
   if (contador > 0) and (contador2 > 0) then
   begin
@@ -297,9 +285,7 @@ begin
     filtro := ' and NOME_PET_VAC like' +
       QuotedStr('%' + Edit_LocalizaVac.Text + '%');
 
-  DM.VacQuery.SQL.Text :=
-    ('select * from PETSVAC where NOME_PET_VAC = NOME_PET_VAC' + filtro +
-    ' order by ' + fldname);
+  DM.VacQuery.SQL.Text :=  ('select * from PETSVAC where NOME_PET_VAC = NOME_PET_VAC' + filtro + ' order by ' + fldname);
   // DM.PetQuery.SQL.Text := ('select * from PETS  order by ' + fldname);
 
   if GridVacinas.SortSettings.Direction = sdAscending then
