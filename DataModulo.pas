@@ -200,6 +200,12 @@ type
     PetHistQueryIDCLIENTE: TIBStringField;
     PetHistQueryNOMECLIENTE: TIBStringField;
     PetHistQueryRECEITUARIOHIST: TIBStringField;
+    Especie_RacaQuery: TIBQuery;
+    IBEspecie_Raca: TIBUpdateSQL;
+    Especie_RacaQueryIDESPECIE: TIntegerField;
+    Especie_RacaQueryESPECIE: TIBStringField;
+    Especie_RacaQueryIDRACA: TIntegerField;
+    Especie_RacaQueryRACA: TIBStringField;
    // procedure DataModuleCreate(Sender: TObject);
 
   private

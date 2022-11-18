@@ -87,7 +87,7 @@ begiN
      if DM.VacQuery.RecordCount <> 0 then
   begin
     PrincipalForm.frxVacinas.PrepareReport();
-     PrincipalForm.frxVacinas.ShowReport();
+    PrincipalForm.frxVacinas.ShowReport();
   end
   else
   begin

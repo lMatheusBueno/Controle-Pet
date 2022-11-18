@@ -637,6 +637,64 @@ object PrincipalForm: TPrincipalForm
         CheckFalse = 'N'
         CheckTrue = 'Y'
         Color = clBtnFace
+        EditLength = 30
+        FieldName = 'COD_CLIENTE_PET'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Header = 'C'#243'd. Cliente'
+        HeaderFont.Charset = DEFAULT_CHARSET
+        HeaderFont.Color = clWindowText
+        HeaderFont.Height = -16
+        HeaderFont.Name = 'Tahoma'
+        HeaderFont.Style = []
+        PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+        PrintFont.Charset = DEFAULT_CHARSET
+        PrintFont.Color = clWindowText
+        PrintFont.Height = -11
+        PrintFont.Name = 'Tahoma'
+        PrintFont.Style = []
+        ShowBands = True
+        Width = 171
+      end
+      item
+        Borders = []
+        BorderPen.Color = clSilver
+        ButtonHeight = 18
+        CheckFalse = 'N'
+        CheckTrue = 'Y'
+        Color = clBtnFace
+        EditLength = 30
+        FieldName = 'NOMECLIENTE'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Header = 'Cliente'
+        HeaderFont.Charset = DEFAULT_CHARSET
+        HeaderFont.Color = clWindowText
+        HeaderFont.Height = -16
+        HeaderFont.Name = 'Tahoma'
+        HeaderFont.Style = []
+        PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+        PrintFont.Charset = DEFAULT_CHARSET
+        PrintFont.Color = clWindowText
+        PrintFont.Height = -11
+        PrintFont.Name = 'Tahoma'
+        PrintFont.Style = []
+        ShowBands = True
+        Width = 113
+      end
+      item
+        Borders = []
+        BorderPen.Color = clSilver
+        ButtonHeight = 18
+        CheckFalse = 'N'
+        CheckTrue = 'Y'
+        Color = clBtnFace
         FieldName = 'PETCOD'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNone
@@ -841,64 +899,6 @@ object PrincipalForm: TPrincipalForm
         CheckTrue = 'Y'
         Color = clBtnFace
         EditLength = 30
-        FieldName = 'COD_CLIENTE_PET'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        Header = 'C'#243'd. Cliente'
-        HeaderFont.Charset = DEFAULT_CHARSET
-        HeaderFont.Color = clWindowText
-        HeaderFont.Height = -16
-        HeaderFont.Name = 'Tahoma'
-        HeaderFont.Style = []
-        PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
-        PrintFont.Charset = DEFAULT_CHARSET
-        PrintFont.Color = clWindowText
-        PrintFont.Height = -11
-        PrintFont.Name = 'Tahoma'
-        PrintFont.Style = []
-        ShowBands = True
-        Width = 171
-      end
-      item
-        Borders = []
-        BorderPen.Color = clSilver
-        ButtonHeight = 18
-        CheckFalse = 'N'
-        CheckTrue = 'Y'
-        Color = clBtnFace
-        EditLength = 30
-        FieldName = 'NOMECLIENTE'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        Header = 'Cliente'
-        HeaderFont.Charset = DEFAULT_CHARSET
-        HeaderFont.Color = clWindowText
-        HeaderFont.Height = -16
-        HeaderFont.Name = 'Tahoma'
-        HeaderFont.Style = []
-        PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
-        PrintFont.Charset = DEFAULT_CHARSET
-        PrintFont.Color = clWindowText
-        PrintFont.Height = -11
-        PrintFont.Name = 'Tahoma'
-        PrintFont.Style = []
-        ShowBands = True
-        Width = 113
-      end
-      item
-        Borders = []
-        BorderPen.Color = clSilver
-        ButtonHeight = 18
-        CheckFalse = 'N'
-        CheckTrue = 'Y'
-        Color = clBtnFace
-        EditLength = 30
         FieldName = 'DATACADPET'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -1089,6 +1089,8 @@ object PrincipalForm: TPrincipalForm
     ShowUnicode = False
     ColWidths = (
       27
+      171
+      113
       65
       161
       162
@@ -1096,8 +1098,6 @@ object PrincipalForm: TPrincipalForm
       235
       131
       102
-      171
-      113
       103
       67)
   end
@@ -1147,6 +1147,7 @@ object PrincipalForm: TPrincipalForm
       Height = 363
       Cursor = crIBeam
       Align = alClient
+      Color = clWhite
       DataField = 'RECEITUARIO'
       DataSource = DSpetquery
       MaxLength = 500
@@ -14371,26 +14372,12 @@ object PrincipalForm: TPrincipalForm
     Version = '2.6.5.11'
     Left = 939
     Top = 4
-    object N1: TMenuItem
-      AutoCheck = True
-      Caption = 'Novo Receitu'#225'rio'
-      SubMenuImages = sAlphaImageList2
-      OnClick = N1Click
-    end
-    object I1: TMenuItem
-      Caption = 'Imprimir Receitu'#225'rio'
-      OnClick = I1Click
-    end
-    object A1: TMenuItem
-      Caption = 'Agenda'
-      OnClick = A1Click
-    end
     object G1: TMenuItem
-      Caption = 'Hist'#243'rico'
+      Caption = 'Receit'#250'arios'
       OnClick = G1Click
     end
     object R1: TMenuItem
-      Caption = 'Impirmir Vacinas'
+      Caption = 'Rel'#225'torio V'#225'cinas'
       OnClick = R1Click
     end
   end

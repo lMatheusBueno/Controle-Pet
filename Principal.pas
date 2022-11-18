@@ -39,9 +39,6 @@ type
     LblData: TsLabel;
     Timer1: TTimer;
     Outros: TAdvPopupMenu;
-    N1: TMenuItem;
-    I1: TMenuItem;
-    A1: TMenuItem;
     sSpeedButton1: TsSpeedButton;
     G1: TMenuItem;
     Panel2: TPanel;
@@ -351,17 +348,24 @@ end;
 procedure TPrincipalForm.BtCadastrarClick(Sender: TObject);
 
 begin
-  DM.PetQuery.Close;
-  DM.VetQuery.Close;
-  DM.PetHistQuery.Close;
+  begin
+    DM.PetQuery.Close;
+    DM.VetQuery.Close;
+    DM.PetHistQuery.Close;
+  end;
 
-  DM.PetQuery.Open;
-  DM.VetQuery.Open;
-  DM.PetHistQuery.Open;
-  DM.Transaction.CommitRetaining;
-  DM.VetQuery.Append;
-  DM.PetQuery.Append;
-  DM.PetHistQuery.Insert;
+  begin
+    DM.PetQuery.Open;
+    DM.VetQuery.Open;
+    DM.PetHistQuery.Open;
+  end;
+  begin
+    DM.Transaction.CommitRetaining;
+    DM.VetQuery.Append;
+    DM.PetQuery.Append;
+    DM.PetHistQuery.Insert;
+  end;
+
   DM.PetQueryDATACADPET.Value := Now;
   DM.PetQuerySITUACAOPET.Value := 'Ativo';
 
@@ -475,8 +479,7 @@ begin
   NotificacaoForm.Btn_Enter.Visible := false;
   NotificacaoForm.Btn_Sim.Visible := true;
   NotificacaoForm.Btn_Nao.Visible := true;
-  NotificacaoForm.sLabel1.Caption :=
-    'Deseja Realizar o Cadastro de um novo Receituário?';
+  NotificacaoForm.sLabel1.Caption := 'Deseja Realizar o Cadastro de um novo Receituário?';
   NotificacaoForm.Show;
 end;
 

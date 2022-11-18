@@ -96,6 +96,8 @@ begin
       DM.VetQuery.open;
       DM.PetQuery.Edit;
       DM.VetQuery.Insert;
+      DM.PetHistQuery.Open;
+      DM.PetHistQuery.Insert;
       NotificacaoForm.close;
       CadastroReceituarioForm := TCadastroReceituarioForm.Create(nil);
       NotificacaoForm.close;

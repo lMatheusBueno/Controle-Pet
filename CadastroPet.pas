@@ -656,6 +656,7 @@ begin
   BtnCancelarVac.Enabled := not BtnCancelarVac.Enabled;
   MemoObs.Enabled := not MemoObs.Enabled;
   Btn_EditarVac.Enabled := not Btn_EditarVac.Enabled;
+  Grid_Vacinas.Enabled := not Grid_Vacinas.Enabled;
 end;
 
 procedure TCadastroPetForm.BoxEspecieEnter(Sender: TObject);
@@ -664,7 +665,7 @@ begin
   DM.AuxQuery2.Close;
   DM.AuxQuery2.SQL.Clear;
   DM.AuxQuery2.SQL.Add
-    ('select DISTINCT ESPECIE from PETS WHERE ESPECIE IS NOT NULL ');
+    ('select DISTINCT ESPECIE from PET_ESPECIE WHERE ESPECIE IS NOT NULL ');
   DM.AuxQuery2.Open;
 
   with DM.AuxQuery2 do

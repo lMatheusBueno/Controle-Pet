@@ -89,7 +89,7 @@
     Height = 529
     Cursor = crHandPoint
     HelpType = htKeyword
-    ActivePage = sTabSheet1
+    ActivePage = sTabSheet3
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -806,6 +806,7 @@
         Hint = 'Nome do Animal'
         HelpType = htKeyword
         TabStop = False
+        Color = clWhite
         DataField = 'COD_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -821,6 +822,7 @@
         Height = 24
         Cursor = crIBeam
         Hint = 'Nome do Animal'
+        Color = clWhite
         DataField = 'NOME_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -855,6 +857,7 @@
         Top = 73
         Width = 559
         Height = 122
+        Color = clWhite
         DataField = 'ANOTA_VAC'
         DataSource = DsVacinas
         Enabled = False
@@ -917,6 +920,7 @@
         Height = 24
         Cursor = crNo
         TabStop = False
+        Color = clWhite
         DataField = 'DIAS_VACINA'
         DataSource = DsVacinas
         ReadOnly = True
@@ -1530,7 +1534,6 @@
   object sSkinManager1: TsSkinManager
     ButtonsOptions.OldGlyphsMode = True
     ButtonsOptions.ModalButtonsColoring = []
-    IsDefault = False
     SkinnedPopups = False
     InternalSkins = <
       item

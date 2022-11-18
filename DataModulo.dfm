@@ -485,6 +485,7 @@ object DM: TDM
     end
   end
   object DATABASE: TIBDatabase
+    Connected = True
     DatabaseName = 'C:\Banco de Dados Pet\DADOS5.FDB'
     Params.Strings = (
       'user_name=SYSDBA'
@@ -496,6 +497,7 @@ object DM: TDM
     Top = 37
   end
   object Transaction: TIBTransaction
+    Active = True
     DefaultDatabase = DATABASE
     Left = 127
     Top = 37
@@ -1973,5 +1975,75 @@ object DM: TDM
       '  ID_PETS_AJUDA = :OLD_ID_PETS_AJUDA')
     Left = 126
     Top = 456
+  end
+  object Especie_RacaQuery: TIBQuery
+    Database = DATABASE
+    Transaction = Transaction
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    SQL.Strings = (
+      'select * from PETESPECIERACA')
+    UpdateObject = IBEspecie_Raca
+    GeneratorField.Field = 'IDPET'
+    GeneratorField.Generator = 'GEN_PETS_ID'
+    GeneratorField.ApplyEvent = gamOnPost
+    Left = 208
+    Top = 97
+    object Especie_RacaQueryIDESPECIE: TIntegerField
+      FieldName = 'IDESPECIE'
+      Origin = '"PETESPECIERACA"."IDESPECIE"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object Especie_RacaQueryESPECIE: TIBStringField
+      FieldName = 'ESPECIE'
+      Origin = '"PETESPECIERACA"."ESPECIE"'
+      Size = 30
+    end
+    object Especie_RacaQueryIDRACA: TIntegerField
+      FieldName = 'IDRACA'
+      Origin = '"PETESPECIERACA"."IDRACA"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object Especie_RacaQueryRACA: TIBStringField
+      FieldName = 'RACA'
+      Origin = '"PETESPECIERACA"."RACA"'
+      Size = 30
+    end
+  end
+  object IBEspecie_Raca: TIBUpdateSQL
+    RefreshSQL.Strings = (
+      'Select '
+      '  IDESPECIE,'
+      '  ESPECIE,'
+      '  IDRACA,'
+      '  RACA'
+      'from PETESPECIERACA '
+      'where'
+      '  IDESPECIE = :IDESPECIE and'
+      '  IDRACA = :IDRACA')
+    ModifySQL.Strings = (
+      'update PETESPECIERACA'
+      'set'
+      '  IDESPECIE = :IDESPECIE,'
+      '  ESPECIE = :ESPECIE,'
+      '  IDRACA = :IDRACA,'
+      '  RACA = :RACA'
+      'where'
+      '  IDESPECIE = :OLD_IDESPECIE and'
+      '  IDRACA = :OLD_IDRACA')
+    InsertSQL.Strings = (
+      'insert into PETESPECIERACA'
+      '  (IDESPECIE, ESPECIE, IDRACA, RACA)'
+      'values'
+      '  (:IDESPECIE, :ESPECIE, :IDRACA, :RACA)')
+    DeleteSQL.Strings = (
+      'delete from PETESPECIERACA'
+      'where'
+      '  IDESPECIE = :OLD_IDESPECIE and'
+      '  IDRACA = :OLD_IDRACA')
+    Left = 304
+    Top = 97
   end
 end
